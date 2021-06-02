@@ -1,0 +1,26 @@
+name: Sync Docker Image to Docker Hub
+description: An Action for Sync Image to Docker Hub
+author: sxyx2008@163.com
+branding:
+  color: blue
+  icon: code
+inputs:
+  username:
+    description: 'Username used to login docker registry'
+    required: true
+  password:
+    description: 'Password used to login docker registry'
+    required: true
+  registry:
+    description: 'Docker registry server address'
+    required: false
+    default: ''
+  image:
+    description: 'sync docker image name'
+    required: true
+  repository:
+    description: 'docker image repository name'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
