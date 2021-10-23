@@ -4,7 +4,8 @@ echo "${INPUT_PASSWORD}" | docker login -u ${INPUT_USERNAME} --password-stdin ${
 
 docker pull ${INPUT_IMAGE}
 
-value=`echo ${INPUT_IMAGE#*/} | sed 's|/|-|g'`
+#分割符为/
+value=`echo ${INPUT_IMAGE##*/}`
 
 new_image=${INPUT_REPOSITORY}/${value}
 
